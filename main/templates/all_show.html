@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>All Shows</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Network</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for tv in show %}
+            <tr>
+                <th scope="row">{{tv.id}}</th>
+                <td>{{tv.title}}</td>
+                <td>{{tv.network}}</td>
+                <td>{{tv.date}}</td>
+                <td><a href="/show/{{tv.id}}">Show</a>  | <a href="/edit/{{tv.id}}">edit</a>  |  <a href="/delete/{{tv.id}}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/create">Add a new show</a>
+</body>
+
+</html>
